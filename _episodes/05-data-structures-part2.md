@@ -148,31 +148,9 @@ Ahora, qué tal si agregamos filas, en este caso, la última vez vimos que las f
 ~~~
 nueva_fila <- list("tortoiseshell", 3.3, TRUE, 9)
 gatos <- rbind(gatos, nueva_fila)
-~~~
-{: .language-r}
-
-
-
-~~~
-Warning in `[<-.factor`(`*tmp*`, ri, value = "tortoiseshell"): invalid
-factor level, NA generated
-~~~
-{: .error}
-
-
-
-~~~
 gatos <- rbind(gatos, nueva_fila)
 ~~~
 {: .language-r}
-
-
-
-~~~
-Warning in `[<-.factor`(`*tmp*`, ri, value = "tortoiseshell"): invalid
-factor level, NA generated
-~~~
-{: .error}
 Qué significa el error que nos da R? 'invalid factor level' nos dice algo acerca de factores (factors)... pero qué es un factor? Un factor es un tipo de datos en R. Un factor es una categoría (por ejemplo, color) con la que R puede hacer ciertas operaciones. Por ejemplo:
 
 
@@ -252,7 +230,7 @@ levels(gatos$color)
 
 
 ~~~
-[1] "atigrado" "mixto"    "negro"   
+NULL
 ~~~
 {: .output}
 
@@ -263,6 +241,14 @@ levels(gatos$color) <- c(levels(gatos$color), 'tortoiseshell')
 gatos <- rbind(gatos, list("tortoiseshell", 3.3, TRUE, 9))
 ~~~
 {: .language-r}
+
+
+
+~~~
+Warning in `[<-.factor`(`*tmp*`, ri, value = structure(c("mixto", "negro", :
+invalid factor level, NA generated
+~~~
+{: .error}
 
 De manera alternativa, podemos cambiar la columna a tipo *character*. En este caso, perdemos las categorías, pero a partir de ahora podemos incorporar cualquier palabra a la columna, sin problemas con los niveles del factor. 
 
@@ -276,7 +262,7 @@ str(gatos)
 
 ~~~
 'data.frame':	6 obs. of  4 variables:
- $ color            : Factor w/ 4 levels "atigrado","mixto",..: 2 3 1 NA NA 4
+ $ color            : Factor w/ 1 level "tortoiseshell": NA NA NA 1 1 1
  $ peso             : num  2.1 5 3.2 3.3 3.3 3.3
  $ legusta_la_cuerda: num  1 0 1 1 1 1
  $ edad             : num  2 3 5 9 9 9
@@ -295,7 +281,7 @@ str(gatos)
 
 ~~~
 'data.frame':	6 obs. of  4 variables:
- $ color            : chr  "mixto" "negro" "atigrado" NA ...
+ $ color            : chr  NA NA NA "tortoiseshell" ...
  $ peso             : num  2.1 5 3.2 3.3 3.3 3.3
  $ legusta_la_cuerda: num  1 0 1 1 1 1
  $ edad             : num  2 3 5 9 9 9
@@ -329,11 +315,11 @@ gatos
 
 ~~~
           color peso legusta_la_cuerda edad
-1         mixto  2.1                 1    2
-2         negro  5.0                 0    3
-3      atigrado  3.2                 1    5
-4          <NA>  3.3                 1    9
-5          <NA>  3.3                 1    9
+1          <NA>  2.1                 1    2
+2          <NA>  5.0                 0    3
+3          <NA>  3.2                 1    5
+4 tortoiseshell  3.3                 1    9
+5 tortoiseshell  3.3                 1    9
 6 tortoiseshell  3.3                 1    9
 ~~~
 {: .output}
@@ -350,10 +336,10 @@ gatos[-4,]
 
 ~~~
           color peso legusta_la_cuerda edad
-1         mixto  2.1                 1    2
-2         negro  5.0                 0    3
-3      atigrado  3.2                 1    5
-5          <NA>  3.3                 1    9
+1          <NA>  2.1                 1    2
+2          <NA>  5.0                 0    3
+3          <NA>  3.2                 1    5
+5 tortoiseshell  3.3                 1    9
 6 tortoiseshell  3.3                 1    9
 ~~~
 {: .output}
@@ -372,9 +358,8 @@ na.omit(gatos)
 
 ~~~
           color peso legusta_la_cuerda edad
-1         mixto  2.1                 1    2
-2         negro  5.0                 0    3
-3      atigrado  3.2                 1    5
+4 tortoiseshell  3.3                 1    9
+5 tortoiseshell  3.3                 1    9
 6 tortoiseshell  3.3                 1    9
 ~~~
 {: .output}
@@ -401,9 +386,8 @@ gatos[,-4]
 
 ~~~
           color peso legusta_la_cuerda
-1         mixto  2.1                 1
-2         negro  5.0                 0
-3      atigrado  3.2                 1
+4 tortoiseshell  3.3                 1
+5 tortoiseshell  3.3                 1
 6 tortoiseshell  3.3                 1
 ~~~
 {: .output}
@@ -423,9 +407,8 @@ gatos[,!drop]
 
 ~~~
           color peso legusta_la_cuerda
-1         mixto  2.1                 1
-2         negro  5.0                 0
-3      atigrado  3.2                 1
+4 tortoiseshell  3.3                 1
+5 tortoiseshell  3.3                 1
 6 tortoiseshell  3.3                 1
 ~~~
 {: .output}
@@ -446,13 +429,11 @@ gatos
 
 ~~~
            color peso legusta_la_cuerda edad
-1          mixto  2.1                 1    2
-2          negro  5.0                 0    3
-3       atigrado  3.2                 1    5
+4  tortoiseshell  3.3                 1    9
+5  tortoiseshell  3.3                 1    9
 6  tortoiseshell  3.3                 1    9
-11         mixto  2.1                 1    2
-21         negro  5.0                 0    3
-31      atigrado  3.2                 1    5
+41 tortoiseshell  3.3                 1    9
+51 tortoiseshell  3.3                 1    9
 61 tortoiseshell  3.3                 1    9
 ~~~
 {: .output}
@@ -470,14 +451,12 @@ gatos
 
 ~~~
           color peso legusta_la_cuerda edad
-1         mixto  2.1                 1    2
-2         negro  5.0                 0    3
-3      atigrado  3.2                 1    5
+1 tortoiseshell  3.3                 1    9
+2 tortoiseshell  3.3                 1    9
+3 tortoiseshell  3.3                 1    9
 4 tortoiseshell  3.3                 1    9
-5         mixto  2.1                 1    2
-6         negro  5.0                 0    3
-7      atigrado  3.2                 1    5
-8 tortoiseshell  3.3                 1    9
+5 tortoiseshell  3.3                 1    9
+6 tortoiseshell  3.3                 1    9
 ~~~
 {: .output}
 
@@ -571,10 +550,10 @@ str(gapminder)
 
 ~~~
 'data.frame':	1704 obs. of  6 variables:
- $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ country  : chr  "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
  $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
- $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ continent: chr  "Asia" "Asia" "Asia" "Asia" ...
  $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
  $ gdpPercap: num  779 821 853 836 740 ...
 ~~~
@@ -605,7 +584,7 @@ typeof(gapminder$country)
 
 
 ~~~
-[1] "integer"
+[1] "character"
 ~~~
 {: .output}
 
@@ -619,7 +598,7 @@ str(gapminder$country)
 
 
 ~~~
- Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+ chr [1:1704] "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
 ~~~
 {: .output}
 
@@ -811,12 +790,12 @@ head(gapminder)
 > > 
 > > 
 > > ~~~
-> >       country year      pop continent lifeExp  gdpPercap
-> > 1134  Nigeria 1977 62209173    Africa  44.514  1981.9518
-> > 828     Kenya 2007 35610177    Africa  54.110  1463.2493
-> > 287     Chile 2002 15497046  Americas  77.860 10778.7838
-> > 220  Cambodia 1967  6960067      Asia  45.415   523.4323
-> > 985    Mexico 1952 30144317  Americas  50.789  3478.1255
+> >      country year      pop continent lifeExp   gdpPercap
+> > 926   Malawi 1957  3221238    Africa  37.207    416.3698
+> > 853   Kuwait 1952   160000      Asia  55.565 108382.3529
+> > 221 Cambodia 1972  7450606      Asia  40.317    421.6240
+> > 217 Cambodia 1952  4693836      Asia  39.417    368.4693
+> > 991   Mexico 1982 71640904  Americas  67.405   9611.1475
 > > ~~~
 > > {: .output}
 > {: .solution}

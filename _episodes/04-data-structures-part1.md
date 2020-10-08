@@ -108,8 +108,7 @@ gatos$color
 
 
 ~~~
-[1] mixto    negro    atigrado
-Levels: atigrado mixto negro
+[1] "mixto"    "negro"    "atigrado"
 ~~~
 {: .output}
 
@@ -155,17 +154,9 @@ gatos$peso + gatos$color
 
 
 ~~~
-Warning in Ops.factor(gatos$peso, gatos$color): '+' not meaningful for
-factors
+Error in gatos$peso + gatos$color: non-numeric argument to binary operator
 ~~~
 {: .error}
-
-
-
-~~~
-[1] NA NA NA
-~~~
-{: .output}
 
 Si adivinaste que el último comando iba a resultar en un error porque `2.1` más
 `"negro"` no tiene sentido, estás en lo cierto - y ya tienes alguna intuición sobre un concepto
@@ -188,7 +179,7 @@ class(gatos$color)
 
 
 ~~~
-[1] "factor"
+[1] "character"
 ~~~
 {: .output}
 
@@ -629,7 +620,7 @@ str(gatos$color)
 
 
 ~~~
- Factor w/ 3 levels "atigrado","mixto",..: 2 3 1
+ chr [1:3] "mixto" "negro" "atigrado"
 ~~~
 {: .output}
 
@@ -663,7 +654,7 @@ str(capas)
 
 
 ~~~
- chr [1:5] "atigrado" "tortoiseshell" "tortoiseshell" "negro" ...
+ chr [1:5] "atigrado" "tortoiseshell" "tortoiseshell" "negro" "atigrado"
 ~~~
 {: .output}
 
@@ -877,8 +868,7 @@ gatos$color
 
 
 ~~~
-[1] mixto    negro    atigrado
-Levels: atigrado mixto negro
+[1] "mixto"    "negro"    "atigrado"
 ~~~
 {: .output}
 
@@ -892,8 +882,7 @@ gatos[,1]
 
 
 ~~~
-[1] mixto    negro    atigrado
-Levels: atigrado mixto negro
+[1] "mixto"    "negro"    "atigrado"
 ~~~
 {: .output}
 
@@ -907,7 +896,7 @@ typeof(gatos[,1])
 
 
 ~~~
-[1] "integer"
+[1] "character"
 ~~~
 {: .output}
 
@@ -921,7 +910,7 @@ str(gatos[,1])
 
 
 ~~~
- Factor w/ 3 levels "atigrado","mixto",..: 2 3 1
+ chr [1:3] "mixto" "negro" "atigrado"
 ~~~
 {: .output}
 
@@ -967,7 +956,7 @@ str(gatos[1,])
 
 ~~~
 'data.frame':	1 obs. of  3 variables:
- $ color          : Factor w/ 3 levels "atigrado","mixto",..: 2
+ $ color          : chr "mixto"
  $ peso           : num 2.1
  $ le_gusta_cuerda: logi TRUE
 ~~~
@@ -1018,8 +1007,7 @@ str(gatos[1,])
 > > 
 > > 
 > > ~~~
-> > [1] mixto    negro    atigrado
-> > Levels: atigrado mixto negro
+> > [1] "mixto"    "negro"    "atigrado"
 > > ~~~
 > > {: .output}
 > > El doble corchete `[[1]]` devuelve el contenido del elemento de la lista. En este caso, 
@@ -1033,8 +1021,7 @@ str(gatos[1,])
 > > 
 > > 
 > > ~~~
-> > [1] mixto    negro    atigrado
-> > Levels: atigrado mixto negro
+> > [1] "mixto"    "negro"    "atigrado"
 > > ~~~
 > > {: .output}
 > > Este ejemplo usa el caracter `$` para direccionar elementos por nombre. _capa_ es la
@@ -1065,8 +1052,7 @@ str(gatos[1,])
 > > 
 > > 
 > > ~~~
-> > [1] mixto
-> > Levels: atigrado mixto negro
+> > [1] "mixto"
 > > ~~~
 > > {: .output}
 > > Este ejemplo usa un sólo corchete, pero esta vez proporcionamos coordenadas de fila y columna. 
@@ -1081,8 +1067,7 @@ str(gatos[1,])
 > > 
 > > 
 > > ~~~
-> > [1] mixto    negro    atigrado
-> > Levels: atigrado mixto negro
+> > [1] "mixto"    "negro"    "atigrado"
 > > ~~~
 > > {: .output}
 > > Al igual que en el ejemplo anterior, utilizamos corchetes simples y proporcionamos 
@@ -1141,7 +1126,7 @@ class(matrix_example)
 
 
 ~~~
-[1] "matrix"
+[1] "matrix" "array" 
 ~~~
 {: .output}
 

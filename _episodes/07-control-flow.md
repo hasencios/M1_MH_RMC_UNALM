@@ -298,9 +298,9 @@ output_vector
 ```
 
 ```
-##  [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a"
-## [12] "3 b" "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b"
-## [23] "5 c" "5 d" "5 e"
+##  [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b"
+## [13] "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b" "5 c" "5 d"
+## [25] "5 e"
 ```
 
 Este enfoque puede ser útil, pero aumentar o incrementar tus resultados (es decir, construir el objeto resultante de forma incremental) es computacionalmente ineficiente por lo que conviene evitarlo cuando estés iterando a través de muchos valores.
@@ -337,9 +337,9 @@ output_vector2
 ```
 
 ```
-##  [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c"
-## [12] "2 c" "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e"
-## [23] "3 e" "4 e" "5 e"
+##  [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c"
+## [13] "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e"
+## [25] "5 e"
 ```
 
 > ## Tip: Bucles While

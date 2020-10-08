@@ -705,8 +705,8 @@ x[names(x)!=c("a","c")]
 
 
 ~~~
-Warning in names(x) != c("a", "c"): longer object length is not a multiple
-of shorter object length
+Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+shorter object length
 ~~~
 {: .error}
 
@@ -739,8 +739,8 @@ names(x) != c("a", "c")
 
 
 ~~~
-Warning in names(x) != c("a", "c"): longer object length is not a multiple
-of shorter object length
+Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+shorter object length
 ~~~
 {: .error}
 
@@ -1232,7 +1232,7 @@ xlist[[-1]]
 
 
 ~~~
-Error in xlist[[-1]]: attempt to select more than one element in get1index <real>
+Error in xlist[[-1]]: invalid negative subscript in get1index <real>
 ~~~
 {: .error}
 

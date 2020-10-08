@@ -180,10 +180,10 @@ str(gapminder)
 
 ~~~
 'data.frame':	1704 obs. of  6 variables:
- $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ country  : chr  "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
  $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
- $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ continent: chr  "Asia" "Asia" "Asia" "Asia" ...
  $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
  $ gdpPercap: num  779 821 853 836 740 ...
 ~~~
@@ -199,27 +199,23 @@ str(gapminder %>% group_by(continent))
 
 
 ~~~
-Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':	1704 obs. of  6 variables:
- $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
- $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
- $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
- $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
- $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
- $ gdpPercap: num  779 821 853 836 740 ...
- - attr(*, "vars")= chr "continent"
- - attr(*, "drop")= logi TRUE
- - attr(*, "indices")=List of 5
-  ..$ : int  24 25 26 27 28 29 30 31 32 33 ...
-  ..$ : int  48 49 50 51 52 53 54 55 56 57 ...
-  ..$ : int  0 1 2 3 4 5 6 7 8 9 ...
-  ..$ : int  12 13 14 15 16 17 18 19 20 21 ...
-  ..$ : int  60 61 62 63 64 65 66 67 68 69 ...
- - attr(*, "group_sizes")= int  624 300 396 360 24
- - attr(*, "biggest_group_size")= int 624
- - attr(*, "labels")='data.frame':	5 obs. of  1 variable:
-  ..$ continent: Factor w/ 5 levels "Africa","Americas",..: 1 2 3 4 5
-  ..- attr(*, "vars")= chr "continent"
-  ..- attr(*, "drop")= logi TRUE
+tibble [1,704 × 6] (S3: grouped_df/tbl_df/tbl/data.frame)
+ $ country  : chr [1:1704] "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
+ $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+ $ pop      : num [1:1704] 8425333 9240934 10267083 11537966 13079460 ...
+ $ continent: chr [1:1704] "Asia" "Asia" "Asia" "Asia" ...
+ $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...
+ $ gdpPercap: num [1:1704] 779 821 853 836 740 ...
+ - attr(*, "groups")= tibble [5 × 2] (S3: tbl_df/tbl/data.frame)
+  ..$ continent: chr [1:5] "Africa" "Americas" "Asia" "Europe" ...
+  ..$ .rows    : list<int> [1:5] 
+  .. ..$ : int [1:624] 25 26 27 28 29 30 31 32 33 34 ...
+  .. ..$ : int [1:300] 49 50 51 52 53 54 55 56 57 58 ...
+  .. ..$ : int [1:396] 1 2 3 4 5 6 7 8 9 10 ...
+  .. ..$ : int [1:360] 13 14 15 16 17 18 19 20 21 22 ...
+  .. ..$ : int [1:24] 61 62 63 64 65 66 67 68 69 70 ...
+  .. ..@ ptype: int(0) 
+  ..- attr(*, ".drop")= logi TRUE
 ~~~
 {: .output}
 
@@ -238,6 +234,13 @@ gdp_bycontinents <- gapminder %>%
     summarize(mean_gdpPercap=mean(gdpPercap))
 ~~~
 {: .language-r}
+
+
+
+~~~
+`summarise()` ungrouping output (override with `.groups` argument)
+~~~
+{: .output}
 
 ![](../fig/13-dplyr-fig3.png)
 
@@ -268,6 +271,19 @@ Esto nos ha permitido calcular la renta per cápita media para cada continente, 
 > >lifeExp_bycountry <- gapminder %>%
 > >    group_by(country) %>%
 > >    summarize(mean_lifeExp=mean(lifeExp))
+> >~~~
+> >{: .language-r}
+> >
+> >
+> >
+> >~~~
+> >`summarise()` ungrouping output (override with `.groups` argument)
+> >~~~
+> >{: .output}
+> >
+> >
+> >
+> >~~~
 > >lifeExp_bycountry %>%
 > >    filter(mean_lifeExp == min(mean_lifeExp) | mean_lifeExp == max(mean_lifeExp))
 > >~~~
@@ -278,7 +294,7 @@ Esto nos ha permitido calcular la renta per cápita media para cada continente, 
 > >~~~
 > ># A tibble: 2 x 2
 > >  country      mean_lifeExp
-> >  <fct>               <dbl>
+> >  <chr>               <dbl>
 > >1 Iceland              76.5
 > >2 Sierra Leone         36.8
 > >~~~
@@ -303,7 +319,7 @@ Esto nos ha permitido calcular la renta per cápita media para cada continente, 
 > >~~~
 > ># A tibble: 1 x 2
 > >  country      mean_lifeExp
-> >  <fct>               <dbl>
+> >  <chr>               <dbl>
 > >1 Sierra Leone         36.8
 > >~~~
 > >{: .output}
@@ -322,7 +338,7 @@ Esto nos ha permitido calcular la renta per cápita media para cada continente, 
 > >~~~
 > ># A tibble: 1 x 2
 > >  country mean_lifeExp
-> >  <fct>          <dbl>
+> >  <chr>          <dbl>
 > >1 Iceland         76.5
 > >~~~
 > >{: .output}
@@ -339,6 +355,13 @@ gdp_bycontinents_byyear <- gapminder %>%
 ~~~
 {: .language-r}
 
+
+
+~~~
+`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+~~~
+{: .output}
+
 Esto ya es bastante potente, pero puede ser incluso mejor. Puedes definir más de una variable en `summarize()`.
 
 
@@ -351,6 +374,13 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
               sd_pop=sd(pop))
 ~~~
 {: .language-r}
+
+
+
+~~~
+`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+~~~
+{: .output}
 
 ## count() y n()
 
@@ -369,14 +399,12 @@ gapminder %>%
 
 
 ~~~
-# A tibble: 5 x 2
-  continent     n
-  <fct>     <int>
-1 Africa       52
-2 Asia         33
-3 Europe       30
-4 Americas     25
-5 Oceania       2
+  continent  n
+1    Africa 52
+2      Asia 33
+3    Europe 30
+4  Americas 25
+5   Oceania  2
 ~~~
 {: .output}
 
@@ -393,9 +421,16 @@ gapminder %>%
 
 
 ~~~
+`summarise()` ungrouping output (override with `.groups` argument)
+~~~
+{: .output}
+
+
+
+~~~
 # A tibble: 5 x 2
   continent se_pop
-  <fct>      <dbl>
+  <chr>      <dbl>
 1 Africa     0.366
 2 Americas   0.540
 3 Asia       0.596
@@ -421,9 +456,16 @@ gapminder %>%
 
 
 ~~~
+`summarise()` ungrouping output (override with `.groups` argument)
+~~~
+{: .output}
+
+
+
+~~~
 # A tibble: 5 x 5
   continent mean_le min_le max_le se_le
-  <fct>       <dbl>  <dbl>  <dbl> <dbl>
+  <chr>       <dbl>  <dbl>  <dbl> <dbl>
 1 Africa       48.9   23.6   76.4 0.366
 2 Americas     64.7   37.6   80.7 0.540
 3 Asia         60.1   28.8   82.6 0.596
@@ -450,6 +492,13 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 ~~~
 {: .language-r}
 
+
+
+~~~
+`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+~~~
+{: .output}
+
 ## Conectando mutate con filtrado lógico: ifelse
 
 La creación de nuevas variables se puede conectar con una condición lógica. Una simple combinación de `mutate` y `ifelse` facilita el filtrado solo allí donde se necesita: en el momento de crear algo nuevo. Esta combinación es fácil de leer y es un modo rápido y potente de descartar ciertos datos (incluso sin cambiar la dimensión conjunta del **data frame**) o para actualizar valores dependiendo de la condición utilizada.
@@ -467,7 +516,19 @@ gdp_pop_bycontinents_byyear_above25 <- gapminder %>%
               sd_pop = sd(pop),
               mean_gdp_billion = mean(gdp_billion),
               sd_gdp_billion = sd(gdp_billion))
+~~~
+{: .language-r}
 
+
+
+~~~
+`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+~~~
+{: .output}
+
+
+
+~~~
 ## actualizando sólo si se cumple una determinada condición
 # para esperanzas de vida por encima de 40 años, el GDP que se espera en el futuro es escalado
 gdp_future_bycontinents_byyear_high_lifeExp <- gapminder %>%
@@ -477,6 +538,13 @@ gdp_future_bycontinents_byyear_high_lifeExp <- gapminder %>%
               mean_gdpPercap_expected = mean(gdp_futureExpectation))
 ~~~
 {: .language-r}
+
+
+
+~~~
+`summarise()` regrouping output by 'continent' (override with `.groups` argument)
+~~~
+{: .output}
 
 ## Combinando `dplyr` y `ggplot2`
 
@@ -549,6 +617,13 @@ gapminder %>%
 > >    arrange(desc(mean_lifeExp))
 > >~~~
 > >{: .language-r}
+> >
+> >
+> >
+> >~~~
+> >`summarise()` ungrouping output (override with `.groups` argument)
+> >~~~
+> >{: .output}
 > {: .solution}
 {: .challenge}
 

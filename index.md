@@ -1,20 +1,40 @@
 ---
 layout: lesson
 root: .
+
+maintainers:
+  - Henry Asencios
 ---
-El objetivo de esta lección es enseñar a las programadoras principiantes a escribir códigos modulares y adoptar buenas prácticas en el uso de R para el análisis de datos. R nos provee un conjunto de paquetes desarrollados por terceros que se usan comúnmente en diversas disciplinas científicas para el análisis estadístico. Encontramos que muchos científicos que asisten a los talleres de Software Carpentry utilizan R y quieren aprender más. Nuestros materiales son relevantes ya que proporcionan a los asistentes una base sólida en los fundamentos de R y enseñan las mejores prácticas del cómputo científico: desglose del análisis en módulos,
-automatización tareas y encapsulamiento.
 
-Ten en cuenta que este taller se enfoca en los fundamentos del lenguaje de programación R y no en el análisis estadístico.
+**Lesson Maintainers:** {{ page.maintainers | join: ', ' }}
 
-A lo largo de este taller se utilizan una variedad de paquetes desarrolados por terceros, los cuales no son necesariamente los mejores ni se encuentran explicadas todas sus funcionalidades, pero son paquetes que consideramos útiles y han sido elegidos principalmente por su facilidad de uso.
+El Módulo I: "Regionalización de modelos globales" forma parte del curso especializado denominado "Modelación Hidrológica de Recursos Hídricos Superficiales y Subterráneos" que ha sido diseñado por la [Facultad de Ingenieria Agrícola (FIA)](http://www.lamolina.edu.pe/facultad/agricola/) de la [Universidad Nacional Agraria La Molina (UNALM)](http://www.lamolina.edu.pe/) para los servidores de la [Autoridad Nacional de Agua (ANA)](https://www.ana.gob.pe/) que no presentan conocimientos de programación en los lenguajes **r** y **Python** para el manejo de series de tiempo hidrometeorológicas observadas y salidas de modelos de circulación global. Las lecciones tendrán una duración de 33 horas de trabajo y tendrán como finalidad generar series de tiempo de precipitaciones y temperatura extrema historica y para escenarios futuros que sirvan como imputs de los subsiguientes módulos de curso.
 
-> ## Prerrequisitos
+En el nivel básico, se comenzará con una descripción general de **r** y **Python**. Se discutirá acerca de la importancia del uso de herramientas de programación para la sistematización de los procesos de análisis de series de tiempo hidrometeorológicas, sus ventajas y limitaciones, la forma correcta de instalar, se mostrará algunos ejemplos disponibles en la literatura para ahondar en el mundo de la programación. Se presentará las nociones básicas de **RStudio** y **Anaconda**. Una introducción al lenguaje **r** y **Python**, los tipos de datos (dataframes, listas, diccionarios, etc.), funciones definidas por el usuario, cómo leer y guardar información en archivos de texto o formato Excel, gráficos, etc.
+
+En el nivel intermedio, manipularemos las series de tiempo observadas (producto PISCO precipitación y temperatura) para determinar la climatología de las zonas de estudio y algunos estadísticos descriptivos. También se sistematizará la descarga de las salidas de diversos modelos de circulación global a través de la programación. 
+
+Finalmente, en el nivel avanzado, se llevará a cabo la regionalización de las salidas de los modelos de circulación global en base a las series de tiempo observadas para nuestras zonas de estudio definidas en el nivel anterior. Se probarán diversas técnicas de downscaling estadístico y se realizará una crítica de los resultados. Asimismo, se guardarán las series de tiempo historicas y futuras para los escenarios analizados con la finalidad de utilizarlas en el siguiente módulo del curso.
+
+> ## Antes de empezar
 >
-> Entender que los archivos estan organizados en directorios (folders).
-> Entender que las computadoras guardan datos e instrucciones (programas, **scripts**) en archivos.
-> Saber como acceder a los archivos que no están en el directorio de trabajo, especificando el **path**.
+> Los participantes deberán utilizar sus propias computadoras con acceso a internet
+> a fin de asegurar un correcto desarrollo del módulo.
+> <br>**Estas lecciones asumen que los participantes no presentan conomientos previos de programación en r ni Python.**
+>
+> Para comenzar, seguir el procedimiento mostrado en la pestaña "[Episodios]"
+> y descargar la data proporcionada para el desarrollo de los ejercicios.
+>
+> #### Prerequisitos
+>
+> Las lecciones requieren de conocimientos de **métodos de análisis en hidrología**.
 {: .prereq}
 
-[gapminder]: http://www.gapminder.org/
-[lesson-example]: https://swcarpentry.github.io/lesson-example
+<!--  
+> ## For Instructors
+> If you are teaching this lesson in a workshop, please see the
+> [Instructor notes](guide).
+{: .prereq}
+--> 
+
+{% include links.md %}

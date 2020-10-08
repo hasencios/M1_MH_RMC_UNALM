@@ -286,6 +286,13 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 ~~~
 {: .language-r}
 
+
+
+~~~
+`geom_smooth()` using formula 'y ~ x'
+~~~
+{: .output}
+
 <img src="../fig/rmd-08-lm-fit-1.png" title="plot of chunk lm-fit" alt="plot of chunk lm-fit" style="display: block; margin: auto;" />
 Podemos hacer la línea más gruesa *configurando* el argumento **aesthetic** **tamaño** en la capa `geom_smooth`:
 
@@ -295,6 +302,13 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
   geom_point() + scale_x_log10() + geom_smooth(method="lm", size=1.5)
 ~~~
 {: .language-r}
+
+
+
+~~~
+`geom_smooth()` using formula 'y ~ x'
+~~~
+{: .output}
 
 <img src="../fig/rmd-08-lm-fit2-1.png" title="plot of chunk lm-fit2" alt="plot of chunk lm-fit2" style="display: block; margin: auto;" />
 
@@ -321,6 +335,13 @@ habíamos usado la función `aes` para definir un *mapeo* entre alguna variable 
 > >  geom_smooth(method="lm", size=1.5)
 > > ~~~
 > > {: .language-r}
+> > 
+> > 
+> > 
+> > ~~~
+> > `geom_smooth()` using formula 'y ~ x'
+> > ~~~
+> > {: .output}
 > > 
 > > <img src="../fig/rmd-08-ch4a-sol-1.png" title="plot of chunk ch4a-sol" alt="plot of chunk ch4a-sol" style="display: block; margin: auto;" />
 > {: .solution}
@@ -350,6 +371,13 @@ habíamos usado la función `aes` para definir un *mapeo* entre alguna variable 
 > > geom_smooth(method="lm", size=1.5)
 > >~~~
 > >{: .language-r}
+> >
+> >
+> >
+> >~~~
+> >`geom_smooth()` using formula 'y ~ x'
+> >~~~
+> >{: .output}
 > >
 > ><img src="../fig/rmd-08-ch4b-sol-1.png" title="plot of chunk ch4b-sol" alt="plot of chunk ch4b-sol" style="display: block; margin: auto;" />
 > {: .solution}
@@ -446,7 +474,7 @@ ggsave(filename = "results/lifeExp.png", plot = lifeExp_plot, width = 12, height
 
 
 ~~~
-Error in grDevices::dev.off(): QuartzBitmap_Output - unable to open file 'results/lifeExp.png'
+Error in grid.newpage(): could not open file 'results/lifeExp.png'
 ~~~
 {: .error}
 

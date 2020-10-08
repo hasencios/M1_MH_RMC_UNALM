@@ -131,26 +131,29 @@ sessionInfo()
 
 
 ~~~
-R version 3.5.2 (2018-12-20)
-Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS Mojave 10.14.2
+R version 4.0.2 (2020-06-22)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 18.04.5 LTS
 
 Matrix products: default
-BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.7.1
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.7.1
 
 locale:
-[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] checkpoint_0.4.5 stringr_1.3.1    knitr_1.21      
+[1] checkpoint_0.4.9 stringr_1.4.0    knitr_1.30      
 
 loaded via a namespace (and not attached):
-[1] compiler_3.5.2 magrittr_1.5   tools_3.5.2    stringi_1.2.4 
-[5] xfun_0.3       evaluate_0.11 
+[1] compiler_4.0.2 magrittr_1.5   tools_4.0.2    stringi_1.5.3  xfun_0.18     
+[6] evaluate_0.14 
 ~~~
 {: .output}
 
