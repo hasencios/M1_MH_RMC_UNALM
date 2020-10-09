@@ -1,324 +1,293 @@
 ---
 layout: reference
+permalink: /reference/
 ---
 
 ## Referencia
 
 ## [Introducción a R y RStudio]({{ page.root }}/01-rstudio-intro/)
 
- - Usa la tecla **escape** para cancelar comandos incompletos o código en ejecución
-   (Ctrl+C) si estas usando R desde el **shell**.
- - Las operaciones aritméticas básicas siguen el orden estándar de precedencia:
-   - Paréntesis: `(`, `)`
-   - Exponentes: `^` or `**`
+ - Usa la tecla de escape para cancelar comandos incompletos o para ejecutar el código (Ctrl+C) si tu estas usando R desde la terminal. 
+- Operaciones aritmeticas básicas tienen el siguiente orden de preferencia:
+   - Parentesis: `(`, `)`
+   - Exponentes: `^` o `**`
    - División: `/`
-   - Multiplicación: `*`
+   - Multiplicación `*`
    - Suma: `+`
    - Resta: `-`
- - La notación científica está disponible, por ejemplo: `2e-3`
- - Cualquier cosa a la derecha de `#` es un comentario, R lo ignorará!
- - Las funciones se denotan por `function_name()`. Las expresiones dentro de los paréntesis se evaluan antes de pasarse a la función, y las funciones se pueden anidar.
+ - La notación científica está disponible, ejemplo: `2e-3`  
+ - Cualquier cosa a la derecha de `#`  es un comentario, ¡R lo va a ignorar!
+ - Las funciones son anotadas por `function_name()`. Las expresiones adentro
+ de los parentesis se evalúan antes de pasarse a la función, y las funciones se pueden anidar.
  - Funciones matemáticas: `exp`, `sin`, `log`, `log10`, `log2` etc.
- - Operadores de comparación: `<`, `<=`, `>`, `>=`, `==`, `!=`
- - Usa `all.equal` para comparar valores numéricos!
- - `<-` es el operador de asignación. Cualquier expresión a la derecha del operador es evaluada, luego se almacena en la variable nombrada a la izquierda.
- - `ls` lista todas las variables y funciones que has creado
- - `rm` puede utilizarse para borrarlas
- - Al asignar valores a los argumentos de la función, debes usar `=`.
+ - Operadores de comparación:  `<`, `<=`, `>`, `>=`, `==`, `!=`
+ - ¡Usar `all.equal` para comparar numeros!
+ - `<-` es el operador de asignamiento. Cualquier cosa a la derecha será evaluado, y después almacenado en la variable con el nombre de la izquierda.   
+ - `ls` enlista todas las variables y funciones que has creado.
+ - `rm` puede ser usado para eliminarlas.
+ - Al asignar valores a los argumentos de la función, _debes_ usar `=`.
 
-## [Manejo de proyectos con RStudio]({{ page.root }}/02-project-intro/)
-
- - Para crear un nuevo proyecto, ve a File -> New Project
- - Instala el paquete `packrat` para crear proyectos independientes
- - `install.packages` para instalar paquetes desde CRAN
- - `library` para cargar un paquete en R
- - `packrat::status` para verificar si se han instalado todos los paquetes a los que se hace referencia en tus **scripts**.
-
-## [Buscando ayuda]({{ page.root }}/03-seeking-help/)
-
-- Para acceder a la ayuda de una función `?function_name` o `help(function_name)`
-- Usa comillas para operadores especiales, por ejemplo: `?"+"`
-- Utiliza la búsqueda ambigua si no puedes recordar un nombre `??search_term`
-- [CRAN task views](http://cran.at.r-project.org/web/views) son un buen punto de partida.
-- [Stack Overflow](http://stackoverflow.com/) es un buen lugar para obtener ayuda con tu código.
-    - `?dput` Guardará datos que estás trabajando, para que otros puedan cargarlos fácilmente.
-    - `sessionInfo()` te dará detalles de tu configuración.
 
 ## [Estructuras de datos]({{ page.root }}/04-data-structures-part1/)
 
-Los valores atómicos en R deben ser de alguno de los 5 **tipos de datos**, múltiples valores se pueden agrupar en **estructuras de datos**.
+Los valores individuales en R deben pertenecer a uno de los 5 **tipos de datos**, los valores múltiples se pueden agrupar en **estructuras de datos**.
 
- **Tipos de datos**
+**Tipos de datos**
 
- - `typeof(object)` proporciona información sobre el tipo de dato de un objeto.
- - Existen 5 tipos de datos principales:
-    - `?numeric` números reales(decimal)
-    - `?integer` sólo números enteros
-    - `?character` texto
-    - `?complex` números complejos
-    - `?logical` valores **TRUE** o **FALSE**
+- `typeof(object)` proporciona información sobre el tipo de datos de un elemento.
+- Hay 5 tipos de datos principales:
+    - `?numeric` números reales (decimales).
+    - `?integer` números enteros `enteros` solamente.
+    - `?character` texto.
+    - `?complex` números complejos.
+    - `?logical` valores TRUE/FALSE.
 
-    **Tipos especiales:**
+**Tipos especiales:**
 
-     - `?NA` valores faltantes
-     - `?NaN` "no es número" para valores indefinidos (por ejemplo, `0/0`).
-     - `?Inf`, `-Inf` infinito.
-     - `?NULL` una estructura de datos que no existe
+- `?NA` datos no disponibles.
+- `?NaN` "no es un número" (del ingles "Not a Number") para valores indefinidos (por ejemplo,` 0/0`).
+- `?Inf`, `-Inf` infinito.
+- `NULL` una estructura de datos que no existe
 
-    `NA` puede ocurrir en cualquier vector atómico. `NaN`, and `Inf` sólo pueden aparecer en vectores de tipo **complex**, **integer** o **numeric**. Los vectores atómicos son los bloques de construcción para todas las demás estructuras de datos. Un valor `NULL` ocurrirá en una estructura de datos entera (pero puede ocurrir como lista de elementos).
+`NA` puede ocurrir en cualquier vector atómico. `NaN`, y` Inf` solo pueden
+ocurren en vectores de tipo complejo, entero o numérico. Los vectores atómicos
+son los bloques base para todas las demás estructuras de datos. Un valor `NULL` ocurrirá en lugar de una estructura de datos completa (pero puede ocurrir como lista
+elementos).
 
+**Estructuras básicas de datos en R:**
+- `?vector` atómico (solo puede contener un tipo).
+- `?list` (contenedor para otros objetos).
+- ``data.frame` objetos bidimensionales cuyas columnas pueden contener diferentes tipos de datos.
+- ``matrix` objetos bidimensionales que pueden contener solo un tipo de datos.
+- ``factor` vectores que contienen datos categóricos predefinidos.
+- `?array` objetos multidimensionales que solo pueden contener un tipo de datos.
 
- **Estructuras de datos básicas en R:**
-  - `?vector` atómico (sólo puede contener un tipo de dato)
-  - `?list` (contenedores para otros objetos)
-  - `?data.frame` objetos bidimensionales cuyas columnas pueden contener diferentes tipos de datos
-  - `?matrix` objeto bidimensional que puede contener sólo un tipo de dato.
-  - `?factor` vectores que contienen datos categóricos predefinidos.
-  - `?array` objeto multi-dimensional que puede contener sólo un tipo de dato.
+Recuerde que las matrices son realmente vectores atómicos al final de cuentas, y que los
+data.frames son realmente listas (esto explica algunos de los más extraños
+comportamiento de R).
 
- Recuerda que las matrices son realmente vectores atómicos, y que los
-**data.frames** son realmente listas(esto explica algunos de los comportamientos extraños de R).
+**[Vectores]({{page.root}}/04-Estructura-de-datos-parte1/)**
+- `?vector()` Todos los elementos en un vector deben ser del mismo tipo.
+- Los elementos se pueden convertir de un tipo a otro usando *coerción*.
+- La función de concatenación 'c()' agregará elementos a un vector.
+- `seq(from = 0, to = 1, by = 1)` creará una secuencia de números.
+- Los elementos en un vector se pueden nombrar usando la función `names()`.
 
- **[Vectores]({{ page.root }}/04-data-structures-part1/)**
- - `?vector()` Todos los elementos del vector deben ser del mismo tipo.
- - Los elementos se pueden convertir de un tipo a otro utilizando *coerción*.
- - La función concatenar 'c()' agrega elementos al vector.
- - `seq(from=0, to=1, by=1)` crea una secuencia de números.
- - Los elementos de un vector se pueden nombrar usando la función `names()`.
+**[Factores]({{page.root}}/04-Estructura-de-datos-parte1/)**
+- `?factor()` Los factores son una estructura de datos diseñada para almacenar datos categóricos.
+- `levels()` muestra los valores válidos que se pueden almacenar en un vector de tipo factor.
 
- **[Factores]({{ page.root }}/04-data-structures-part1/)**
- - `?factor()` Los factores son una estructura de datos diseñada para almacenar datos categóricos.
- - `levels()` muestra los valores válidos que se pueden almacenar en un vector de tipo factor.
+**[Listas]({{page.root}}/04-Estructura-de-datos-parte1/)**
+- ``list() `Las listas son una estructura de datos diseñada para almacenar datos de diferentes tipos.
 
- **[Listas]({{ page.root }}/04-data-structures-part1/)**
- - `?list()` Las listas son una estructura de datos diseñada para almacenar datos de diferente tipos.
+**[Matrices]({{page.root}}/04-Estructura-de-datos-parte1/)**
+- `?matrix()` Las matrices son una estructura de datos diseñada para almacenar datos bidimensionales.
 
- **[Matrices]({{ page.root }}/04-data-structures-part1/)**
- - `?matrix()` Las matrices son una estructura de datos diseñada para almacenar datos bidimensionales.
+**[Data Frame]({{page.root}}/05-Estructura-de-datos-parte2/) **
+- `?data.frame` es una estructura de datos clave. Es una `lista` de `vectores`.
+- `cbind()` agregará una columna (vector) a un data.frame.
+- `rbind()` agregará una fila (lista) a un data.frame.
 
- **[Data Frames]({{ page.root }}/05-data-structures-part2/)**
- - `?data.frame` es una estructura de datos clave. Es una `lista` de `vectores`.
- - `cbind()` agregará una columna (vector) a un **data.frame**.
- - `rbind()` agregará un renglón (list) a un **data.frame**.
+**Funciones útiles para consultar estructuras de datos: **
+- estructura `?str`, imprime un resumen de toda la estructura de datos.
+- `?typeof` te dice el tipo dentro de un vector atómico.
+- `?class` ¿cuál es la estructura de datos?
+- `?head` imprime los primeros elementos `n` (filas para objetos bidimensionales).
+- `?tail` imprime los últimos elementos `n` (filas para objetos bidimensionales).
+- `?rownames`,`?colnames`, `?dimnames` recupera o modifica los nombres de la fila o de la columna de un objeto.
+- `?names` recupera o modifica los nombres de un vector o lista atómica (o
+columnas de un data.frame).
+- `?length` obtiene la cantidad de elementos en un vector atómico.
+- `?nrow`,`?ncol`, `?dim` obtiene las dimensiones de un objeto n-dimensional
+(No funcionará en vectores o listas atómicas).
 
- **Funciones útiles para consultar estructuras de datos:**
- - `?str` estructura, imprime un resumen de toda la estructura de datos
- - `?typeof` te dice el tipo dentro de un vector atómico
- - `?class` Indica cual es la estructura de datos
- - `?head` Imprime los primeros `n` elementos (filas para objetos bidimensionales)
- - `?tail` imprime los últimos `n` elementos (filas para objetos bidimensionales)
- - `?rownames`, `?colnames`, `?dimnames` recupera o modifica los nombres de fila y columna de un objeto.
- - `?names` recupera o modifica los nombres de un vector o lista atómica (o columnas de un **dataframe**).
- - `?length` obtiene el número de elementos de un vector atómico
- - `?nrow`, `?ncol`, `?dim` obtiene las dimensiones de un objeto n-dimensional
-   (No funcionará en vectores o listas atómicas).
+## [Explorando los data frames]({{ page.root }}/05-data-structures-part2/)
 
-## [Explorando Dataframes]({{ page.root }}/05-data-structures-part2/)
-
- - `read.csv` para leer datos en una estructura regular
-   - `sep` argumento para especificar el separador
-     - "," para valores separados por coma
-     - "\t" para valores separados por tabulador
-   - Otros argumentos:
-     - `header=TRUE` si hay una fila de encabezado
+- `read.csv` para leer datos en una estructura regular
+  - `sep` es un argumento para especificar el tipo de separador
+    - "," para archivos separados por comas
+    - "\t" para archivos separados por tab
+  - Otros argumentos:
+    - `header = TRUE` para indicar que hay una fila de encabezado
 
 ## [Subconjunto de datos]({{ page.root }}/06-data-subsetting/)
 
- - Se puede acceder a los elementos por:
-   - Indice
-   - Nombre
-   - Vectores lógicos
+- Se puede acceder a los elementos por:
+  - Índice
+  - Nombre
+  - Vectores lógicos
 
-- `[` corchetes:
-   - *extrae* elementos individuales o **subset** de vectores
-    - por ejemplo,`x[1]` extrae el primer elemento del vector x.
-   - *extrae* elementos individuales de una lista. El valor devuelto será otra `list()`.
-   - *extrae* columnas de un **data.frame**.
- - `[` con dos argumentos para:
-   - *extrae* filas y/o columnas de
-     - matrices
-     - **data.frames**
-     - por ejemplo: `x[1,2]` extraerá el valor de la fila 1, columna 2.
-     - por ejemplo: `x[2,:]` extraerá toda la segunda fila.
+- `[` corchetes individuales:
+  - *extraer* elementos individuales o *subconjuntos* de vectores
+  - p.ej. `x[1] `extrae el primer elemento del vector x.
+  - *extrae* elementos individuales de una lista. El valor devuelto será otra `lista()`.
+  - *extrae* columnas de un data.frame
+- `[` con dos argumentos para:
+- *extrae* filas y / o columnas de
+  - matrices
+  - data.frames
+  - p.ej. `x[1,2]` extraerá el valor en la fila 1, columna 2.
+  - p.ej. `x[2,:]` extraerá toda la segunda columna de valores.
 
- - `[[` dobles corchetes para extraer elementos de las listas.
- - `$` para acceder a columnas o listar elementos por nombre
- - índices negativos omiten elementos
+- `[[` dobles corchetes para extraer elementos de las listas.
+- `$` para acceder a columnas o elementos de lista por nombre.
+- Índices negativos omiten elementos.
 
-## [Control de flujo]({{ page.root }}/07-control-flow/)
+## [Condicional]({{ page.root }}/07-control-flow/)
 
- - Usa la condición `if` para iniciar una instrucción condicional, `else if` para proporcionar pruebas adicionales, y `else` para proporcionar un valor predeterminado.
- - Las instrucciones que se encuentran entre las llaves de las declaraciones condicionales deben estar indentadas.
- - Usa `==` para probar la igualdad.
- - `X && Y` sólo es cierto si tanto X como Y son `TRUE`.
- - `X || Y` es cierto si ya sea X o Y, o ambos, son `TRUE`.
- - Cero se considera `FALSE`; todos los demás números se consideran `TRUE`
- - Anidar loops para operar en datos multidimensionales.
+- Use la condición `if` para iniciar una instrucción condicional, la condición `else if` para proporcionar pruebas adicionales, y `else` para proporcionar un valor predeterminado.
+- El cuerpo de los enunciados condicionales deben estar indentados.
+- Usa `==` para probar la igualdad.
+- `X && Y` solo es verdadero si tanto X como Y son` TRUE`.
+- `X || Y` es verdadero si X o Y, o ambos, son `TRUE`.
+- Cero se considera `FALSE`; todos los demás números se consideran `TRUE`
+- Usar bucles dentro de bucles para operar en datos multidimensionales.
 
-## [Creación de gráficos con calidad para publicación]({{ page.root }}/08-plot-ggplot2/)
 
- - las figuras se pueden crear con la gramática de los gráficos:
-   - `library(ggplot2)`
-   - `ggplot` para crear la figura base
-   - `aes`especifica la estética de los ejes de datos, la forma, color y tamaño
-   - `geom`especifica el tipo de gráfico, por ejemplo, `point`, `line`, `density`, `box`
-   - `geom`agrega también transformaciones estadísticas, por ejemplo. `geom_smooth`
-   - `scale` funciones que controla la relación entre los valores de los datos y los valores visuales o estéticos 
-   - `facet` funciones para estratificar la figura en paneles
-   - `aes` Las características estéticas se aplican a capas individuales, o se pueden establecer para todo el gráfico dentro de `ggplot`.
-   - `theme` cambia el aspecto general del gráfico
-   - ¡El orden de las capas importa!
-   - `ggsave` salva una figura.
+## [Creación de gráficos de calidad de publicación]({{ page.root }}/08-plot-ggplot2/)
+
+- las figuras se pueden crear con la misma semantica de los gráficos:
+  - `library(ggplot2)`.
+  - `ggplot` para crear la figura base.
+  - `aes` especifica los ejes de datos, la forma, el color y el tamaño de los datos.
+  - La función `geom` especifica el tipo de gráfico, p. `punto`,` línea`, `densidad`,` caja`.
+  - La función `geom` también agrega transformaciones estadísticas, p.ej. `geom_smooth`.
+  - Las funciones `scale` cambian la asignación de datos a la estética * change the mapping from data to aesthetics.
+  - la función `facet` estratifica la figura en paneles.
+  - `aes`thetics se aplica a capas individuales, o se puede configurar para toda la trama
+  dentro de `ggplot`.
+  - las funciones `theme` cambian el aspecto general de la trama.
+  - ¡El orden de las capas importa!
+  - `ggsave` para guardar una figura.
 
 ## [Vectorización]({{ page.root }}/09-vectorization/)
 
-- La mayoría de las funciones y operaciones se aplican a cada elemento de un vector
-- `*` la multiplicación de elemento a elemento
-- `%*%` para una verdadera multiplicación de matrices
-- `any()` regresará `TRUE` si cualquier elemento de un vector es `TRUE`
-- `all()` regresará `TRUE` si *todos* los elementos de un vector son `TRUE`
+- La mayoría de las funciones y operaciones se aplican a cada elemento de un vector.
+- `*` aplica elemento a las matrices.
+- `% *%` para la verdadera multiplicación de matrices.
+- `any()` devolverá `TRUE` si cualquier elemento de un vector es` TRUE`.
+- `all()` devolverá `TRUE` si *todos* los elementos de un vector son` TRUE`.
 
-## [Funciones]({{ page.root }}/10-functions/)
+## [Funciones explicadas]({{ page.root }}/10-functions/)
 
-  - `?"function"`
-  - Coloque el código cuyos parámetros cambian frecuentemente en una función, luego llámelo con diferentes valores de parámetros para personalizar su comportamiento.
-  - Se devuelve la última línea de una función, o puede usar `return` explícitamente
-  - Cualquier código escrito en el cuerpo de la función buscará preferiblemente variables definidas dentro de la función
-  - Documente ¿por qué?, luego ¿qué?, y finalmente ¿cómo? (si el código no se explica por sí mismo)
+- `?"función"`.
+- Coloqua el código cuyos parámetros cambian frecuentemente en una función, luego llámalo con
+  diferentes valores de parámetros para personalizar el comportamiento.
+- Devuelve la última línea de una función, o puede usar `return` explícitamente.
+- Cualquier código escrito en el cuerpo de la función buscará preferiblemente variables definidas dentro de la función.
+- Documentar por qué, luego qué, y finalmente cómo (si el código no se explica por sí mismo).
 
-## [Escribiendo datos]({{ page.root }}/11-writing-data/)
+## [Escribir datos]({{ page.root }}/11-writing-data/)
 
- - `write.table` para escribir objetos en formato regular
- - asigna `quote = FALSE` para que el texto no sea envuelto entre comillas ` "` 
-
+- `write.table` para escribir objetos en formato regular.
+- establecer `quote = FALSE` para que el texto no esté envuelto en` "` marks.
 
 ## [Split-apply-combine]({{ page.root }}/12-plyr/)
 
- - Use la familia de funciones `xxply` para aplicar funciones a grupos dentro de algunos datos.
- - la primera letra, `a`rray,`d`ata.frame o `l`ist corresponde a los datos de entrada
- - la segunda letra denota la estructura de datos de salida
- - Las funciones anónimas (aquellas que no tienen un nombre asignado) se usan dentro de la familia de funciones `plyr` 
-   en grupos dentro de los datos.
+- Usar la familia de funciones `xxply` para aplicar funciones a grupos dentro de
+  algunos datos.
+- la primera letra, `a`rray,` d`ata.frame o `l`ist corresponde a los datos de entrada.
+- la segunda letra denota la estructura de datos de salida.
+- Las funciones anónimas (aquellas que no tienen asignado un nombre) se usan dentro de la familia `plyr` de funciones en grupos dentro de datos.
 
+## [Manipulación de dataframe con dplyr]({{ page.root }}/13-dplyr/)
+- `library(dplyr)`.
+- `?select` para extraer variables por nombre.
+- `?filter` devuelve filas con condiciones coincidentes.
+- `?group_by` group data por una o más variables.
+- `?summarize` resume múltiples valores en un solo valor.
+- `?mutate` agrega nuevas variables a un data.frame.
+- Combina operaciones usando el operador pipe `?"%>% "`.
 
-## [Manejo de dataframe con dplyr]({{ page.root }}/13-dplyr/)
- - `library(dplyr)`
- - `?select` extrae variables por nombre.
- - `?filter` regresa filas que coincidan con las condiciones.
- - `?group_by` agrupa datos por una de muchas variables.
- - `?summarize` resume valores múltiples a un solo valor.
- - `?mutate` agrega nuevas variables a un **data.frame**.
- - Combina operaciones usando el operador **pipe** `?"%>%"`.
-
-## [Manejo de dataframe con tidyr]({{ page.root }}/14-tidyr/)
-- `library(tidyr)`
-- '?gather' convierte datos del formato *ancho* al *largo*. 
+## [Manipulación de dataframe con tidyr]({{ page.root }}/14-tidyr/)
+- `biblioteca(tidyr)`.
+- '?gather' convierte datos del formato *ancho* al *largo*.
 - '?spread' convierte datos del formato *largo* al *ancho*.
-- '?separate' separa un único valor en múltiples valores. 
-- '?unite' fusionar valores múltiples en un solo valor.
-
-## [Generando reportes con knitr]({{ page.root }}/15-knitr-markdown/)
-- Valor de informes reproducibles
-- Conceptos básicos de Markdown
-- fragmentos de código R
-- Opciones de fragmentos
-- Código R en línea
-- Otros formatos de salida
-
-
-## [Buenas prácticas para escribir un buen código]({{ page.root }}/16-wrap-up/)
-
- * Programa defensivamente, es decir, asume que van a surgir errores y escribe el código para detectarlos cuando surjan.
- * Escriba pruebas antes de escribir el código para ayudar a determinar exactamente qué se supone que debe hacer ese código.
- * Conoce que se supone hace el código, antes de tratar de corregirlo.
- * Haz que falle cada vez.
- * Haz que falle rápido.
- * Cambia una cosa a la vez, y por una razón.
- * Ten un registro de lo que has hecho.
- * Se humilde.
+- '?separate' divide un solo valor en múltiples valores.
+- '?unite' fusiona múltiples valores en un solo valor.
 
 ## Glosario
 
 {:auto_ids}
-argument
-:   Un valor dado a una función o programa cuando se ejecuta.
-    El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parameter).
 
+argumento
+: Un valor dado a una función o programa cuando se ejecuta.
+  El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parámetro).
 
-assign
-:   Para darle a un valor un nombre asociandolo a una variable.
-  
-body
-:   (de una función): las instrucciones que se ejecutan cuando se ejecuta una función.
+asignar
+: Darle un nombre a un valor asociando una variable a él.
 
-comment
-:   Una observación en un programa que pretende ayudar a los lectores humanos a comprender lo que está sucediendo,
-    pero es ignorado por la computadora.
-    Los comentarios en Python, R y el shell de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea;
-    los comentarios en SQL comienzan con `--`,
-    y otros idiomas tienen otras convenciones.
+cuerpo
+: (de una función): las instrucciones que se ejecutan cuando se ejecuta una función.
 
-comma-separated values
-:   (CSV) Una representación textual común para tablas
-    en el cual los valores en cada fila están separados por comas.
+comentario
+: Un comentario en un programa que pretende ayudar a los lectores humanos a entender lo que está sucediendo,
+  pero es ignorado por la computadora.
+  Los comentarios en Python, R y el shell de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea;
+  los comentarios en SQL comienzan con `--`,
+  y otros lenguajes tienen otras convenciones.
 
-delimiter
-:   Un caracter or caracteres usados para separar valores individuales,
-    tales como las comas entre columnas en un archivo [CSV](#comma-separated-values).
+Valores Separados por Comas
+: (CSV) Una representación textual común para tablas
+  en el cual los valores en cada fila están separados por comas.
 
-documentation
-:   Texto en lenguaje humano escrito para explicar lo que hace el software
-    cómo funciona, o cómo usarlo.
+delimitador
+: Un caracter utilizado para separar los valores individuales,
+  como las comas entre columnas en un archivo [CSV] (# comma-separated-values).
 
-floating-point number
-:   Un número que contiene una parte fraccionaria y un exponente.
-    Ver también: [integer](#integer).
+documentación
+: Texto en lenguaje humano escrito para explicar qué hace el software,
+  cómo funciona, o cómo usarlo.
 
-for loop
-:   Un ciclo que se ejecuta una vez para cada valor en algún tipo de conjunto, lista o rango.
-    Ver también: [while loop](#while-loop).
+número punto flotante
+: Un número que contiene una parte fraccionaria y un exponente.
+  Ver también: [entero](#entero).
 
-index
-:   Un subíndice que especifica la ubicación de un único valor en una colección,
-    como un solo píxel en una imagen.
+bucle
+: Un bucle que se ejecuta una vez para cada valor en algún tipo de conjunto, lista o rango.
+  Ver también: [bucle condicionado](#bucle-condicionado).
 
-integer
-:   Un número entero, como -12343.
-    Ver también: [floating-point number](#floating-point-number).
+índice
+: Un subíndice que especifica la ubicación de un único valor en una colección,
+  como un solo píxel en una imagen.
 
-library
-:   En R, es el directorio(s) donde los [paquetes](#package) son almacenados.
+entero
+: Un número entero, como -12343. Ver también: [número de punto flotante](número punto flotante).
 
-package
-:   Una colección de funciones R, datos y código compilado en un formato bien definido. Los paquetes se almacenan en una [biblioteca](#library) y se cargan usando la función de library().
+biblioteca
+: En R, el directorio(s) donde [paquetes](#paquete) están almacenados.
 
+paquete
+: Una colección de funciones R, datos y código compilado en un formato bien definido. Los paquetes se almacenan en una [biblioteca](#biblioteca) y se cargan usando la función de biblioteca().
 
-parameter
-:   Nombre de variable en la declaración de la función que se usa para guardar un valor cuando la función es llamada.
-    El término a menudo se usa indistintamente (y de manera inconsistente) con [argumento](#argumento).
+parámetro
+: Una variable nombrada en la declaración de la función que se usa para mantener un valor pasado en la función.
+  El término a menudo se usa indistintamente (y de manera inconsistente) con [argumento](#argumento).
 
-return statement
-:   Una declaración que hace que una función deje de ejecutarse y devuelva un valor en donde fue llamada.
+Declaración de devolución
+: Una instrucción que hace que una función deje de ejecutarse y devuelva un valor a su llamador de inmediato.
 
-sequence
-:   Una colección de información que se presenta en un orden específico.
+secuencia 
+: Una colección de información que se presenta en un orden específico.
 
-shape
-:   Las dimensiones de una matriz, representadas como un vector.
-    Por ejemplo, una forma de matriz de 5 × 3 es `(5,3)`.
+forma
+: Las dimensiones de una matriz, representadas como un vector.
+  Por ejemplo, una forma de matriz 5 × 3 es `(5,3)`.
 
-string
-:   Abreviatura de "cadena de caracteres",
-    una [secuencia](#sequence) de cero o más caracteres.
+sequencia de caracteres
+: Una [secuencia](#secuencia) de cero o más caracteres.
 
-syntax error
-:  Un error de programación que ocurre cuando las instrucciones están en un orden o contienen caracteres no esperados por el lenguaje de programación.
+error de sintaxis
+: Un error de programación que ocurre cuando las instrucciones no están en orden o contienen caracteres
+  no esperado por el lenguaje de programación.
 
-type
-:   La clasificación de algo en un programa (por ejemplo, el contenido de una variable)
-    como un tipo de número (por ejemplo [floating-point](#float), [integer](#integer)), [string](#string),
-    o algo más. En R el comando typeof() se usa para consultar el tipo de una variable.
+tipo
+: La clasificación de algo en un programa (por ejemplo, el contenido de una variable)
+  como un tipo de número (por ejemplo [punto flotante](#flotante), [entero](#entero))
+  o algo mas. En R, el comando typeof() se usa para consultar un tipo de variable.
 
-while loop
-:   Un bucle que se ejecuta siempre que una condición dada sea verdadera.
-    Ver también: [for loop](#for-loop).
+bucle condicionado
+: Un bucle que se ejecuta siempre que alguna condición sea verdadera.
+  Ver también: [bucle](#bucle).
+
+{% include links.md %}
