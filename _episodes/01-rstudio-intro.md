@@ -3,7 +3,7 @@
 # Instead, please edit 01-rstudio-intro.md in _episodes_rmd/
 title: "Introducción a R y RStudio"
 teaching: 45
-exercises: 10
+exercises: 15
 questions:
 - "¿Cómo orientarse en RStudio?"
 - "¿Cómo interactuar con R?"
