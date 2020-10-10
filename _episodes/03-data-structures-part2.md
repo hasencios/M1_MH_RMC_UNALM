@@ -790,12 +790,12 @@ head(gapminder)
 > > 
 > > 
 > > ~~~
-> >          country year      pop continent lifeExp  gdpPercap
-> > 1254 Puerto Rico 1977  3080828  Americas  73.440  9770.5249
-> > 1440   Sri Lanka 2007 20378239      Asia  72.396  3970.0954
-> > 1468      Sweden 1967  7867931    Europe  74.160 15258.2970
-> > 1127       Niger 2002 11140655    Africa  54.496   601.0745
-> > 595       Greece 1982  9786480    Europe  75.240 15268.4209
+> >           country year       pop continent lifeExp  gdpPercap
+> > 681       Hungary 1992  10348684    Europe  69.170 10535.6285
+> > 685       Iceland 1952    147962    Europe  72.490  7267.6884
+> > 745       Ireland 1952   2952156    Europe  66.910  5210.2803
+> > 366 Cote d'Ivoire 1977   7459574    Africa  52.374  2517.7365
+> > 105    Bangladesh 1992 113704579      Asia  56.018   837.8102
 > > ~~~
 > > {: .output}
 > {: .solution}

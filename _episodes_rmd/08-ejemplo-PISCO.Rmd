@@ -53,10 +53,21 @@ setwd(dir)
 
 ## Instalando los paquetes necesarios para leer la base de datos
 
-Si no se tiene instalado la libreria `raster`, proceder como sigue a continuación:
+Si no se tiene instalada la libreria `raster`, proceder como sigue a continuación:
 
-```{r}
+```{r raster, echo=FALSE}
 if (!require(raster)) install.packages("raster")
 library(raster)
+```
+
+
+## Leer el producto PISCO precipitación mensual descargado 
+
+Si no se tiene instalada la libreria `raster`, proceder como sigue a continuación:
+
+```{r pr, echo=FALSE}
+pr <- brick('../data/pr.nc')
+crs(pr) <- '+proj=longlat +datum=WGS84 +no_defs'
+plot(pr[[1]])
 ```
 
