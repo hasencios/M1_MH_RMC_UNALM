@@ -6,16 +6,9 @@ title: Configuración
 > Para las lecciones de R y RStudio usaremos el archivo que podemos descargar en [este enlace](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/weecology/portal-teachingdb).  Luego se deberá
 > guardar el archivo en la carperta `data`
 > 
-> Tienes que descomprimir este archivo después de descargarlo.
+> Tienes que descargar el archivo individualmente con los siguientes enlaces:
 >
-> O descarga cada archivo individualmente con los siguientes enlaces:
->
-> - [surveys.csv](https://ndownloader.figshare.com/files/10717177)
-> - [species.csv](https://ndownloader.figshare.com/files/3299483)
-> - [speciesSubset.csv]({{ page.root }}/data/speciesSubset.csv)
-> - [plots.csv](https://ndownloader.figshare.com/files/3299474)
-> - [bouldercreek_09_2013.txt]({{ page.root }}/data/bouldercreek_09_2013.txt)
-> - [SQL Database](https://ndownloader.figshare.com/files/11188550)
+> - [gapminder_wide.csv](https://github.com/hasencios/M1_MH_RMC_UNALM/blob/gh-pages/data/gapminder_wide.csv)
 {: .prereq}
 
 
