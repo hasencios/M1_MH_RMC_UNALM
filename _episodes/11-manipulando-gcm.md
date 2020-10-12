@@ -14,6 +14,8 @@ keypoints:
 source: Rmd
 ---
 
+<!--
+
 Ahora que hemos descargado las salidas de los GCMs, necesitamos saber cómo acceder a ellos y comenzar a analizarlos. En esta lección, seleccionaremos un subconjunto espacial y temporal de sus datos del GCM que coincidan con su línea base climática observada, y comenzará a comprender el clima futuro utilizando el método **Delta Change**. Al final de este lección, tendrás datos de más de 40 GCMs. Comenzaremos explorando algunos de los atributos de los datos tridimensionales contenidos en los archivos **netCDF** descargados. Se recomienda  que se abra una pestaña del navegador con la [documentación](http://unidata.github.io/netcdf4-python/netCDF4/index.html) de la biblioteca de netCDF4 como referencia.
 
 Empezamos, como siempre, importando las bibliotecas que necesitaremos.
@@ -926,3 +928,4 @@ df_wide.to_csv('CanESM2_MonthlyPP2.csv')
 
 {% include links.md %}
 
+-->

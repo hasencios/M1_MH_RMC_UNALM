@@ -20,6 +20,8 @@ keypoints:
 source: Rmd
 ---
 
+<!--
+
 ## Intérprete
 
 Python es un lenguaje interpretado que puede ser usado de dos formas:
@@ -493,3 +495,4 @@ print(z)
 
 {% include links.md %}
 
+-->

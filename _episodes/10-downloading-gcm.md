@@ -12,6 +12,8 @@ keypoints:
 source: Rmd
 ---
 
+<!--
+
 Los datos climáticos que necesitamos están disponibles a través de la **Earth System Grid Federation** (ESGF), una red  de centros académicos y gubernamentales en los Estados Unidos, Europa y Asia. Es un repositorio para todos los datos climáticos del CMIP5 y la flamante CMIP6. En este laboratorio, nos centraremos en la salida de datos del CMIP5.
 
 El ESGF es una red de nodos. Por ejemplo, si visita esta página web del [ESGF](https://esgf-node.llnl.gov/projects/esgf-llnl/), estará visitando el nodo del Lawrence-Livermore National Laboratory, pero podría, teóricamente, elegir cualquiera de los otros nodos que aparecen en la página principal del ESGF.
@@ -321,3 +323,4 @@ Ahora que sabes cómo buscar y filtrar datos, practica con diferentes conjuntos 
 
 {% include links.md %}
 
+-->

@@ -8,7 +8,7 @@ title: Configuración
 > 
 > Tienes que descargar el archivo individualmente con los siguientes enlaces:
 >
-> - [gapminder_wide.csv](https://github.com/hasencios/M1_MH_RMC_UNALM/blob/gh-pages/data/gapminder_wide.csv)
+> - [gapminder_wide.csv](https://downgit.github.io/#/home?url=https://github.com/hasencios/M1_MH_RMC_UNALM/blob/gh-pages/data/gapminder_wide.csv)
 {: .prereq}
 
 
@@ -82,4 +82,3 @@ jupyter lab
 
 Un **Jupyter Notebook** se abrirá automáticamente en tu navegador.
 Si no es así, o si deseas utilizar un navegador diferente, abre este enlace: <http://localhost:8888>.
-

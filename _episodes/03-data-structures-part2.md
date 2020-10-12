@@ -514,6 +514,8 @@ gapminder <- read.csv("data/gapminder-FiveYearData.csv")
 ~~~
 {: .language-r}
 
+<!-- 
+
 > ## Tips misceláneos
 >
 > * Otro tipo de archivo que puedes encontrar es el separado por tabuladores (.tsv). Para especificar este separador, usa `"\t"` o `read.delim()`.
@@ -537,6 +539,8 @@ gapminder <- read.csv("data/gapminder-FiveYearData.csv")
 >
 > * Puedes leer directamente planillas de Excel sin necesidad de convertirlas a texto plano usando el paquete [readxl](https://cran.r-project.org/package=readxl).
 {: .callout}
+
+-->
 
 Vamos a investigar gapminder un poco; lo primero que hay que hacer siempre es ver cómo se ve el dataset usando `str`:
 

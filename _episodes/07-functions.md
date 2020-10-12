@@ -21,7 +21,7 @@ keypoints:
 source: Rmd
 ---
 
-
+<!--
 
 > ## Palabras clave
 >
@@ -688,3 +688,5 @@ nuestro primer intento cuando habíamos obtenido un vector de números.
 
 
 {% include links.md %}
+
+-->

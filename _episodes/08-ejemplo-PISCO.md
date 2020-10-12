@@ -21,6 +21,8 @@ keypoints:
 source: Rmd
 ---
 
+<!--
+
 ## Explorando Iri Data Library
 
 En esta sección accederemos a la base de datos del producto grillado [PISCO](https://www.tandfonline.com/doi/abs/10.1080/02626667.2019.1649411). Para ello, vamos a ingresar a la siguiente website:
@@ -333,3 +335,4 @@ write.csv(pettit,'../data/pettit.csv',row.names = TRUE)
 <br>
 
 
+-->
