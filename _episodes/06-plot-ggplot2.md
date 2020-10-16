@@ -15,7 +15,7 @@ keypoints:
 source: Rmd
 ---
 
-<!--
+
 
 Graficar nuestros datos es una de las mejores maneras
 para explorarlos y para observar las relaciones que existen entre las variables.
@@ -524,4 +524,3 @@ te llevarán a Stack Overflow donde encuentras preguntas y respuestas ¡con cód
 {: .challenge}
 
 {% include links.md %}
--->

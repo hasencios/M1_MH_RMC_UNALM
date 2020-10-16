@@ -21,8 +21,6 @@ keypoints:
 source: Rmd
 ---
 
-<!--
-
 > ## Palabras clave
 >
 > Comando : Traducción
@@ -688,5 +686,3 @@ nuestro primer intento cuando habíamos obtenido un vector de números.
 
 
 {% include links.md %}
-
--->
