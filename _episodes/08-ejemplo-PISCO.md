@@ -21,7 +21,6 @@ keypoints:
 source: Rmd
 ---
 
-<!--
 
 ## Explorando Iri Data Library
 
@@ -335,4 +334,3 @@ write.csv(pettit,'../data/pettit.csv',row.names = TRUE)
 <br>
 
 
--->

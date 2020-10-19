@@ -15,8 +15,6 @@ keypoints:
 source: Rmd
 ---
 
-
-
 Graficar nuestros datos es una de las mejores maneras
 para explorarlos y para observar las relaciones que existen entre las variables.
 
