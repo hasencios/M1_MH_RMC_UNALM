@@ -12,7 +12,7 @@ keypoints:
 source: Rmd
 ---
 
-<!--
+
 
 Los datos climáticos que necesitamos están disponibles a través de la **Earth System Grid Federation** (ESGF), una red  de centros académicos y gubernamentales en los Estados Unidos, Europa y Asia. Es un repositorio para todos los datos climáticos del CMIP5 y la flamante CMIP6. En este laboratorio, nos centraremos en la salida de datos del CMIP5.
 
@@ -322,5 +322,3 @@ for index, row in files.iterrows():
 Ahora que sabes cómo buscar y filtrar datos, practica con diferentes conjuntos de filtros, y luego completa los ejercicios, a continuación.
 
 {% include links.md %}
-
--->
