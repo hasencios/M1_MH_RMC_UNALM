@@ -82,3 +82,34 @@ jupyter lab
 
 Un **Jupyter Notebook** se abrirá automáticamente en tu navegador.
 Si no es así, o si deseas utilizar un navegador diferente, abre este enlace: <http://localhost:8888>.
+
+## Crear un **env** o espacio de trabajo
+
+Después de instalar **Jupyter Notebook** y los paquetes requeridos,
+vamos a instalar el espacio de trabajo necesario para descargar los GCM:
+
+~~~
+conda config --prepend channels conda-forge
+conda config --append channels ConorIA
+conda create -n "gcm_unalm" "python>=3.7.1" ec3 esgf-pyclient matplotlib netCDF4 pandas requests "seaborn>=0.9.0"
+~~~
+{: .language-bash}
+
+Esto creará un nuevo entorno, llamado "gcm_unalm", que contendrá todos los paquetes que utilizaremos para completar los ejercicios contenidos en la lección, incluyendo Python 3.7.1 o superior.
+
+~~~
+conda activate gcm_unalm
+conda install jupyterlab #Esto solo una vez
+jupyter lab 
+~~~
+{: .language-bash}
+
+Si prefiere tener una sola instalación de Jupyter que pueda acceder a todos sus entornos, puede utilizar Jupyter desde su entorno "base" e instalar un "kernel" para su entorno "gcm_unalm" emitiendo los siguientes comandos: 
+
+~~~
+conda install ipykernel
+python -m ipykernel install --user --name="gcm_unalm" --display-name="gcm_unalm"
+~~~
+{: .language-bash}
+
+Al final de todo, deberías tener instalado Python 3 en un nuevo y brillante entorno Conda que contiene todos los paquetes y módulos que necesitaremos para completar los ejercicios.
