@@ -47,7 +47,7 @@ Anaconda viene con **Pandas**, **Jupyter Notebook**, **Numpy** y **Matplotlib** 
 
 #### Descarga e instala **Anaconda**
 
-Descarga e instala [**Anaconda**](https://www.continuum.io/downloads).
+Descarga e instala [**Anaconda**](https://www.anaconda.com/products/individual).
 Recuerde descargar e instalar el instalador para **Python** 3.x.
 
 #### Descarga el paquete para crear gráficos.
