@@ -23,7 +23,7 @@ En esta lección, nos centraremos en los Representative Concentration Pathways, 
 Cada uno de los cuatro escenarios de RCP se desarrolló sobre la base de los escenarios de la literatura climática, con el objetivo de que éstos, en conjunto, proporcionaran una gama completa de los escenarios que estaban presentes en la literatura en el momento de su desarrollo. El RCP8.5 se basó en el escenario A2 "business as usual" del Informe Especial sobre Escenarios de Emisiones (SRES en inglés) del cuarto informe de evaluación del IPCC. Se caracteriza por un alto uso de la energía, un rápido crecimiento de la población, un bajo desarrollo tecnológico y una escasa cooperación política mundial. Los RCP 2.6, 4.5 y  6.0, por otro lado, se basan en un uso de energía de entre 750 y 900 EJ (1 EJ = 1×10^18 J) para el 2100. Estos escenarios ponen un mayor énfasis en la energía alternativa y renovable. Una diferencia clave entre estos escenarios es el crecimiento demográfico proyectado y el producto bruto interno. Los cuatro escenarios se resumen en la siguiente tabla.
 
 <figure>
-  <img src="../fig/11_Intro.png" style="width:100%">
+  <img src="../fig/11_intro.png" style="width:100%">
 </figure>
 
 Leer [The next generation of scenarios for climate change research and assessment](https://www.nature.com/articles/nature08823).
