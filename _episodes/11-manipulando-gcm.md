@@ -12,6 +12,22 @@ keypoints:
 source: Rmd
 ---
 
+## Introducción
+
+### Escenarios de cambio climático: The Representative Concentration Pathways
+
+Un modelo por sí mismo no puede proyectar el futuro sin un poco de orientación. Aquí es donde entran los escenarios de cambio climático. Un escenario es la descripción de un "posible futuro". Por lo general, los escenarios considern cómo se verá el futuro del mundo en términos de: desarrollo social y economico, la tecnología, el medio ambiente y la geopolítica. Los escenarios no son predicciones del futuro. En cambio, pueden ayudarnos a comprender lo desconocido de manera que podamos llegar a decisiones robustas e informadas ante una gama de posibles resultados.
+
+En esta lección, nos centraremos en los Representative Concentration Pathways, la generación de escenarios climáticos que se desarrollaron para el quinto informe de evaluación del IPCC. Estos escenarios, abreviados como RCP, son un conjunto de proyecciones climáticas consistentes, sin embargo, no son escenarios integrados. Constituyen el primer paso para un análisis más profundo.
+
+Cada uno de los cuatro escenarios de RCP se desarrolló sobre la base de los escenarios de la literatura climática, con el objetivo de que éstos, en conjunto, proporcionaran una gama completa de los escenarios que estaban presentes en la literatura en el momento de su desarrollo. El RCP8.5 se basó en el escenario A2 "business as usual" del Informe Especial sobre Escenarios de Emisiones (SRES en inglés) del cuarto informe de evaluación del IPCC. Se caracteriza por un alto uso de la energía, un rápido crecimiento de la población, un bajo desarrollo tecnológico y una escasa cooperación política mundial. Los RCP 2.6, 4.5 y  6.0, por otro lado, se basan en un uso de energía de entre 750 y 900 EJ (1 EJ = 1×10^18 J) para el 2100. Estos escenarios ponen un mayor énfasis en la energía alternativa y renovable. Una diferencia clave entre estos escenarios es el crecimiento demográfico proyectado y el producto bruto interno. Los cuatro escenarios se resumen en la siguiente tabla.
+
+<figure>
+  <img src="../fig/11_Intro.png" style="width:100%">
+</figure>
+
+Leer [The next generation of scenarios for climate change research and assessment](https://www.nature.com/articles/nature08823).
+
 ## Explorando la información descarga de los GCM
 
 Ahora que hemos descargado las salidas de los GCMs, necesitamos saber cómo acceder a ellos y comenzar a analizarlos. En esta lección, seleccionaremos un subconjunto espacial y temporal de sus datos GCM que coincidan con su línea base climática observada, y comenzaremos a comprender el clima futuro. Al final de este lección, tendrás datos de más de al menos 5 GCMs para cada una de tus subcuencas. 
