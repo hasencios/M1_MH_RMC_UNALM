@@ -14,7 +14,7 @@ source: Rmd
 
 ## Introducción
 
-### Regionalización estadítica de las salidas de los GCM: el método Quantil-Mapping
+### Regionalización estadítica de las salidas de los GCM: el método Quantile-Mapping
 
 La idea básica en este método es la de ajustar la distribución empírica de probabilidad acumulada de cada uno de las salidas de los GCM a la de la serie de datos observados.
 
@@ -174,7 +174,7 @@ Podemos resaltar que la información presenta un periodo de 1981-2100. Además, 
   <img src="../fig/12-ecdf_bCORR.png" style="width:70%">
 </figure>
 
-## Aplicar el método Quantil-Mapping
+## Aplicar el método Quantile-Mapping
 
 Vamos a aplicar el método Quantil-Mapping a datos agrupados según las estaciones del año.
 
@@ -295,7 +295,7 @@ print("El proceso se ha completado satisfactoriamente!")
 ~~~
 {: .language-r}
 
-## Ahora vamos a aplicar el método Quantil-Mapping para nuestra zona de estudio
+## Ahora vamos a aplicar el método Quantile-Mapping para nuestra zona de estudio
 
 La idea es hacer todo el proceso iterando sobre la cantidad de subcuencas.
 
