@@ -53,7 +53,6 @@ library(latticeExtra)
 
 dir <- 'C:/Users/Computer/Documents/R/unalm/code/'
 setwd(dir)
-}
 ~~~
 {: .language-r}
 
