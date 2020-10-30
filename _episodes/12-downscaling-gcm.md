@@ -36,12 +36,6 @@ Empezamos abriendo un **script** en RStudio y definir dónde se localiza el proy
 
 Comencemos con definir la ruta de nuestra carpeta de trabajo:
 
-~~~
-dir <- 'C:/directorio/de/trabajo/'
-setwd(dir)
-~~~
-{: .language-r}
-
 ## Instalando los paquetes necesarios para leer la base de datos
 
 Si no se tiene instalada la libreria `qmap, zoo y latticeExtra`, proceder como sigue a continuación:
