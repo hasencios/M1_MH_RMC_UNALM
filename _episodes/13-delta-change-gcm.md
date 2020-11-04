@@ -12,7 +12,7 @@ keypoints:
 source: Rmd
 ---
 
-## Explorando la información descarga de los GCM
+## Explorando la información descargada de los GCM
 
 En esta lección, vamos a desarrollar el procedimiento estandar para estimar las tasas de cambio respecto de los RCP y GCM para las variables de precipitación y temperatura máxima y mínima. 
 
@@ -22,7 +22,7 @@ Comencemos con definir la ruta de nuestra carpeta de trabajo:
 
 ## Instalando los paquetes necesarios para leer la base de datos
 
-Si no se tiene instalada la libreria `qmap y hydroTSM`, proceder como sigue a continuación:
+Si no se tiene instalada la libreria `qmap, hydroTSM y ggplot2`, proceder como sigue a continuación:
 
 ~~~
 # ..............................................................................
