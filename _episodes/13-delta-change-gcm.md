@@ -14,7 +14,7 @@ source: Rmd
 
 ## Explorando la información descarga de los GCM
 
-En esta lección, vamos a desarrollar el procedimiento estandar las tasas de cambio respecto de los RCP y GCM para las variables de precipitación y temperatura máxima y mínima. 
+En esta lección, vamos a desarrollar el procedimiento estandar para estimar las tasas de cambio respecto de los RCP y GCM para las variables de precipitación y temperatura máxima y mínima. 
 
 Empezamos abriendo un **script** en RStudio y definir dónde se localiza el proyecto e importamos las bibliotecas que vamos a usar.
 
